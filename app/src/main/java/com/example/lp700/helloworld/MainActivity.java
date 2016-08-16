@@ -9,9 +9,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); //Inflate
-
-        TextView tvHello = (TextView) findViewById(R.id.tvHello);
-        tvHello.setText("ปอนด์");
+        setContentView(R.layout.activity_main); //inflate
     }
+
 }
