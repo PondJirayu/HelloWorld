@@ -172,7 +172,7 @@
                 android:layout_below="@id/tvClock"
                 android:layout_marginTop="15dp"
                 android:text="Good food, good friends and a lot of laughs. xxxxxxxx"
-                android:textColor="#000000" />
+                android:textSize="14sp" />
 
             <View
                 android:id="@+id/viewPictureSocial"
@@ -189,57 +189,44 @@
                 android:layout_alignLeft="@id/tvMessage2"
                 android:layout_below="@id/viewPictureSocial"
                 android:layout_marginTop="10dp"
-                android:text="10 likes 3 comments" />
+                android:text="10 likes 3 comments"
+                android:textSize="12sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45dp"
                 android:layout_alignParentBottom="true"
+                android:background="#E0E0E0"
                 android:orientation="horizontal">
 
-                <RelativeLayout
+                <TextView
+                    android:id="@+id/viewLike"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="#E0E0E0">
+                    android:background="#ffffff" />
 
-                    <TextView
-                        android:id="@+id/viewLike"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="1dp"
-                        android:background="#ffffff" />
-                </RelativeLayout>
 
-                <RelativeLayout
+                <TextView
+                    android:id="@+id/viewComment"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="#E0E0E0">
+                    android:background="#ffffff" />
 
-                    <TextView
-                        android:id="@+id/viewComment"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="1dp"
-                        android:layout_marginTop="1dp"
-                        android:background="#ffffff" />
-                </RelativeLayout>
 
-                <RelativeLayout
+                <TextView
+                    android:id="@+id/viewShare"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginTop="1dp"
                     android:layout_weight="1"
-                    android:background="#E0E0E0">
+                    android:background="#ffffff" />
 
-                    <TextView
-                        android:id="@+id/viewShare"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="1dp"
-                        android:layout_marginTop="1dp"
-                        android:background="#ffffff" />
-                </RelativeLayout>
 
             </LinearLayout>
 
