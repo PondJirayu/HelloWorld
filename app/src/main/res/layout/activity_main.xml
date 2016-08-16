@@ -60,7 +60,7 @@
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="4dp"
+                android:layout_height="3.5dp"
                 android:layout_alignParentBottom="true"
                 android:background="#1976D2" />
 
@@ -115,6 +115,133 @@
                 android:layout_height="25dp"
                 android:layout_centerInParent="true"
                 android:background="#1976D2" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/viewProfilePicture"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:background="#C51162" />
+
+            <TextView
+                android:id="@+id/tvMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/viewProfilePicture"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_toRightOf="@id/viewProfilePicture"
+                android:text="Casey Song with Harrison Smith and 3 others xxxxx"
+                android:textColor="#111111"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tvMessage"
+                android:layout_below="@id/tvMessage"
+                android:text="24 minutes ago"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvMessage2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/viewProfilePicture"
+                android:layout_alignRight="@id/tvMessage"
+                android:layout_below="@id/tvClock"
+                android:layout_marginTop="15dp"
+                android:text="Good food, good friends and a lot of laughs. xxxxxxxx"
+                android:textColor="#000000" />
+
+            <View
+                android:id="@+id/viewPictureSocial"
+                android:layout_width="400dp"
+                android:layout_height="180dp"
+                android:layout_below="@id/tvMessage2"
+                android:layout_marginTop="15dp"
+                android:background="#64B5F6" />
+
+            <TextView
+                android:id="@+id/tvLikeandComments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tvMessage2"
+                android:layout_below="@id/viewPictureSocial"
+                android:layout_marginTop="10dp"
+                android:text="10 likes 3 comments" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#E0E0E0">
+
+                    <TextView
+                        android:id="@+id/viewLike"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="1dp"
+                        android:background="#ffffff" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#E0E0E0">
+
+                    <TextView
+                        android:id="@+id/viewComment"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#ffffff" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#E0E0E0">
+
+                    <TextView
+                        android:id="@+id/viewShare"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="#ffffff" />
+                </RelativeLayout>
+
+            </LinearLayout>
 
         </RelativeLayout>
 
