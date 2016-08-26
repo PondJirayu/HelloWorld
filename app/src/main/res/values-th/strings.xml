@@ -1,0 +1,8 @@
+<resources>
+    <string name="calculate">คำนวณ</string>
+    <string name="clear">เคลียร์</string>
+    <string name="i_agree">ฉันตกลง</string>
+    <string name="internet">อินเตอร์เน็ต</string>
+    <string name="settings">การตั้งค่า</string>
+    <string name="help">ช่วยเหลือ</string>
+</resources>

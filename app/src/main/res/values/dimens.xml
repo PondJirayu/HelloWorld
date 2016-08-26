@@ -2,4 +2,12 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="radio_button_margin_left">16dp</dimen>
+    <dimen name="textview_marginbotton">4dp</dimen>
+    <dimen name="tv_welcome">24sp</dimen>
+    <dimen name="tv_clip">14sp</dimen>
+    <dimen name="tv_ByContinuing">14sp</dimen>
+    <dimen name="btn_skip_margin_buttom">16dp</dimen>
+    <dimen name="btn_getstarted_margin_buttom">20dp</dimen>
+    <dimen name="btn_getstarted_padding">16dp</dimen>
 </resources>

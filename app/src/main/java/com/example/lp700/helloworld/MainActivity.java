@@ -1,37 +1,180 @@
 package com.example.lp700.helloworld;
 
+import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
+import android.view.Display;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    EditText editText1, editText2;
+    TextView tvResult, tvDivideByZero;
+    Button btnCalculate, btnClear;
+    RadioGroup rgOperator;
+    CheckBox cbAgree;
+    Switch switchOnOff;
+    ImageButton imageButton1,imageButton2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); //inflate
+        setContentView(R.layout.activity_main); // Inflate
 
-        final TextView tvHello = (TextView)findViewById(R.id.tvHello);
-        final EditText editTextHello = (EditText)findViewById(R.id.edittextHello);
+        initInstances();
 
-        tvHello.setMovementMethod(LinkMovementMethod.getInstance()); // ทำให้ลิ้งค์สามารถคลิกได้
-        tvHello.setText(Html.fromHtml("<b>He<u>ll</u>o</b> <i><u>World</u></i> <font color=\"#fafafa\">La la la</font> <a href=\"http://www.nuuneoi.com\">http://nuuneoi.com</a>"));
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int width = size.x;
+        int height = size.y;
+        Toast.makeText(MainActivity.this,
+                "Width =" + width + ", Height =" + height,
+                Toast.LENGTH_SHORT)
+                .show();
+    }
 
-        editTextHello.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if(actionId == EditorInfo.IME_ACTION_DONE){
-                    // Copy text in EditText to TextView
-                    tvHello.setText(editTextHello.getText());
-                    return true;
-                }
-                return false;
+    private void initInstances() {
+        editText1 = (EditText) findViewById(R.id.editText1);
+        editText2 = (EditText) findViewById(R.id.editText2);
+        tvResult = (TextView) findViewById(R.id.tvEqual);
+        btnCalculate = (Button) findViewById(R.id.btnCalculate);
+        rgOperator = (RadioGroup) findViewById(R.id.rgOperator);
+        tvDivideByZero = (TextView) findViewById(R.id.tvDivideByZero);
+        cbAgree = (CheckBox) findViewById(R.id.cbAgree);
+        btnClear = (Button) findViewById(R.id.btnClear);
+        switchOnOff = (Switch) findViewById(R.id.switchOnOff);
+        imageButton1 = (ImageButton) findViewById(R.id.imageButton1);
+        imageButton2 = (ImageButton) findViewById(R.id.imageButton2);
+
+        btnCalculate.setOnClickListener(this);
+        btnClear.setOnClickListener(this);
+        imageButton1.setOnClickListener(this);
+        imageButton2.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v == imageButton1){
+            Toast.makeText(MainActivity.this,
+                    "Image Button1",
+                    Toast.LENGTH_SHORT)
+                    .show();
+        }
+        if(v == imageButton2){
+            Toast.makeText(MainActivity.this,
+                    "Image Button2",
+                    Toast.LENGTH_SHORT)
+                    .show();
+        }
+        if (v == btnClear) {
+            editText1.setText("0");
+            editText2.setText("0");
+            tvResult.setText("= 0");
+            cbAgree.setChecked(false);
+            switchOnOff.setChecked(false);
+//            switchOnOff.setVisibility(Switch.VISIBLE); // "VISIBLE" แสดง View
+//            switchOnOff.setVisibility(Switch.GONE);    // "GONE" ซ่อน View A -> และขยับ View B แทนที่ View A
+//            switchOnOff.setVisibility(Switch.INVISIBLE);  // "INVISIBLE" ซ่อน View A -> แต่ไม่ขยับ View B แทนที่ View A
+            if (switchOnOff.getVisibility() == Switch.VISIBLE)
+                switchOnOff.setVisibility(Switch.INVISIBLE);
+            else
+                switchOnOff.setVisibility(Switch.VISIBLE);
+
+            Toast.makeText(MainActivity.this,
+                    "ล้างข้อมูลแล้ว",
+                    Toast.LENGTH_SHORT)
+                    .show();
+        }
+        if (v == btnCalculate && cbAgree.isChecked() && switchOnOff.isChecked()) {
+//            cbAgree.setChecked(false);
+            int val1 = 0, val2 = 0, sum = 0;
+
+            try {
+                val1 = Integer.parseInt(editText1.getText().toString()); // getText return string + style ต้องแปลงเป็น string ด้วยคำสั่ง toString()
+            } catch (NumberFormatException e) {
             }
-        });
+            try {
+                val2 = Integer.parseInt(editText2.getText().toString());
+            } catch (NumberFormatException e) {
+            }
+
+            // Check Operator
+            switch (rgOperator.getCheckedRadioButtonId()) {
+                case R.id.rbPlus:
+                    tvDivideByZero.setText("");
+                    sum = val1 + val2;
+                    break;
+                case R.id.rbMinus:
+                    tvDivideByZero.setText("");
+                    sum = val1 - val2;
+                    break;
+                case R.id.rbMultiply:
+                    tvDivideByZero.setText("");
+                    sum = val1 * val2;
+                    break;
+                case R.id.rbDivide:
+                    try {
+                        sum = val1 / val2;
+                        tvDivideByZero.setText("");
+                    } catch (ArithmeticException e) {
+                        tvDivideByZero.setText("Divide by Zero");
+                    }
+                    break;
+            }
+            tvResult.setText(sum + "");
+
+            Log.d("Calculation", "Result = " + sum);
+            Toast.makeText(MainActivity.this,
+                    "Result = " + sum,
+                    Toast.LENGTH_LONG)
+                    .show();
+        }
+    }
+
+    // Inflate Options Menu from res/menu/menu_main.xml
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    // Handling click events
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                Toast.makeText(MainActivity.this,
+                        "Settings",
+                        Toast.LENGTH_SHORT)
+                        .show();
+                return true;
+            case R.id.action_help:
+                Toast.makeText(MainActivity.this,
+                        "Help",
+                        Toast.LENGTH_SHORT)
+                        .show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
+
