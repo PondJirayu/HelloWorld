@@ -47,17 +47,20 @@ public class CustomView extends View {
         gestureDetector = new GestureDetector(getContext(), new GestureDetector.OnGestureListener() {
             @Override
             public boolean onDown(MotionEvent e) {
-                getParent().requestDisallowInterceptTouchEvent(true);
+                // Decide : Care or not care?
+                getParent().requestDisallowInterceptTouchEvent(true); // แม่ห้ามขโมย event ลูก
                 return true;
             }
 
             @Override
             public void onShowPress(MotionEvent e) {
+                // Do whatever
                 getParent().requestDisallowInterceptTouchEvent(true);
             }
 
             @Override
             public boolean onSingleTapUp(MotionEvent e) {
+                // Action Up
                 return false;
             }
 
@@ -71,7 +74,7 @@ public class CustomView extends View {
 
             }
 
-            @Override
+            @Override // การปัด
             public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
                 isBlue = !isBlue;
                 invalidate();
@@ -79,7 +82,7 @@ public class CustomView extends View {
             }
         });
 
-        // Enable Click Mode
+        // Enable Click Mode เปิดโหมดคลิกให้กับ view
         setClickable(true);
 
         // After this call, if it's not clickable, it will be clickable
@@ -135,8 +138,9 @@ public class CustomView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        // Pass event to GestureDetector
+        // Pass event to GestureDetector - ส่ง event ไปที่ gestureDetector
         gestureDetector.onTouchEvent(event);
+
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
                 isDown = true;

@@ -52,7 +52,7 @@ public class TextView2 extends View {
                 defStyleAttr, defStyleRes);
         try {
             text = a.getString(R.styleable.CustomView_text);
-            textSize = a.getFloat(R.styleable.CustomView_textSize, 0);
+            textSize = a.getFloat(R.styleable.CustomView_textSize, 1);
         }finally {
             a.recycle();
         }
