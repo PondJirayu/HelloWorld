@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CheckBox cbAgree;
     Switch switchOnOff;
     ImageButton imageButton1,imageButton2;
+    CustomViewGroup viewGroup1, viewGroup2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switchOnOff = (Switch) findViewById(R.id.switchOnOff);
         imageButton1 = (ImageButton) findViewById(R.id.imageButton1);
         imageButton2 = (ImageButton) findViewById(R.id.imageButton2);
+        viewGroup1 = (CustomViewGroup) findViewById(R.id.viewGroup1);
+        viewGroup2 = (CustomViewGroup) findViewById(R.id.viewGroup2);
+
+        viewGroup1.setButtonText("Hello");
+        viewGroup2.setButtonText("World");
 
         btnCalculate.setOnClickListener(this);
         btnClear.setOnClickListener(this);

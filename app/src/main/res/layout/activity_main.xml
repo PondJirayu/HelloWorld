@@ -67,10 +67,10 @@
                 android:text="@string/clear" />
 
             <!--<com.example.lp700.helloworld.TextView2-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="50dp"-->
-                <!--app:textSize="40"-->
-                <!--app:text="Hello world"/>-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="50dp"-->
+            <!--app:textSize="40"-->
+            <!--app:text="Hello world"/>-->
 
             <CheckBox
                 android:id="@+id/cbAgree"
@@ -123,6 +123,16 @@
             <ProgressBar
                 style="@style/ProgressBarStyle"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.example.lp700.helloworld.CustomViewGroup
+                android:id="@+id/viewGroup1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.example.lp700.helloworld.CustomViewGroup
+                android:id="@+id/viewGroup2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <mehdi.sakout.fancybuttons.FancyButton
