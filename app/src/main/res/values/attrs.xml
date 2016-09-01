@@ -2,5 +2,7 @@
 <resources>
     <declare-styleable name="CustomView">
         <attr name="isBlue" format="boolean"/>
+        <attr name="text" format="string"/>
+        <attr name="textSize" format="float"/>
     </declare-styleable>
 </resources>

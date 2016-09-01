@@ -65,6 +65,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/clear" />
 
+            <com.example.lp700.helloworld.TextView2
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                app:textSize="40"
+                app:text="Hello world"/>
+
             <CheckBox
                 android:id="@+id/cbAgree"
                 android:layout_width="wrap_content"
@@ -125,7 +131,7 @@
             <com.example.lp700.helloworld.CustomView
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                app:isBlue="true"/>
+                app:isBlue="true" />
 
             <Switch
                 android:id="@+id/switchOnOff"

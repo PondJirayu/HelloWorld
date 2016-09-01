@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Picture;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -26,7 +27,7 @@ public class CustomView extends View {
     public CustomView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
-        initWithAttrs(attrs, 0, 0);
+           initWithAttrs(attrs, 0, 0);
     }
 
     public CustomView(Context context, AttributeSet attrs, int defStyleAttr) {
