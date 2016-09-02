@@ -12,4 +12,13 @@
 
     </style>
 
+    <style name="TextViewStyle">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/tv_ByContinuing</item>
+    </style>
+
+    <style name="TextViewStyle.Green">
+        <item name="android:textColor">@android:color/holo_green_light</item>
+    </style>
+
 </resources>
