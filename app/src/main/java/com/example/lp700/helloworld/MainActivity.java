@@ -66,7 +66,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         viewGroup1 = (CustomViewGroup) findViewById(R.id.viewGroup1);
         viewGroup2 = (CustomViewGroup) findViewById(R.id.viewGroup2);
 
-
+//        viewGroup1.setButtonText("Hello");
+//        viewGroup2.setButtonText("World");
 
         btnCalculate.setOnClickListener(this);
         btnClear.setOnClickListener(this);
