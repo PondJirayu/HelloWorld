@@ -127,6 +127,8 @@
 
             <include layout="@layout/sample_bar" />
 
+            <!--<include layout="@layout/sample_bar2"/>-->
+
             <com.example.lp700.helloworld.CustomViewGroup
                 android:id="@+id/viewGroup1"
                 android:layout_width="match_parent"
