@@ -1,5 +1,6 @@
 package com.example.lp700.helloworld;
 
+import android.content.Intent;
 import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -151,6 +152,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     "Result = " + sum,
                     Toast.LENGTH_LONG)
                     .show();
+
+            Intent intent = new Intent(MainActivity.this,
+                    SecondActivity.class);
+            intent.putExtra("Result", sum);
+            startActivity(intent);
         }
     }
 
