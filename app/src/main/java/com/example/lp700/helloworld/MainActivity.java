@@ -155,6 +155,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             Intent intent = new Intent(MainActivity.this, SecondActivity.class); // สร้างจดหมาย จ่าหน้าซอง (create intent)
             intent.putExtra("result", sum); // ใส่ของลงในซองจดหมาย
+
+            // Playground
+            Coordinate c1 = new Coordinate(5, 10, 20);
+//            c1.setX(5);
+//            c1.setY(10);
+//            c1.setY(20);
+
             startActivity(intent); // ส่งจดหมาย (send intent)
         }
     }
