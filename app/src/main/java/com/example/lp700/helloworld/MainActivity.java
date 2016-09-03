@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             Intent intent = new Intent(MainActivity.this,
                     SecondActivity.class);
-            intent.putExtra("Result", sum);
+            intent.putExtra("result", sum);
             startActivity(intent);
         }
     }
