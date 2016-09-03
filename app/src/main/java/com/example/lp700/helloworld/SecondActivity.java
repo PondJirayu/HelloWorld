@@ -23,6 +23,6 @@ public class SecondActivity extends Activity {
 
     private void initInstances() {
         tvResult = (TextView) findViewById(R.id.tvResult);
-        tvResult.setText("Result" + sum);
+        tvResult.setText("Result " + sum);
     }
 }

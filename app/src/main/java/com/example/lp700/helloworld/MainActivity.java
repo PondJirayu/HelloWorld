@@ -153,10 +153,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Toast.LENGTH_LONG)
                     .show();
 
-            Intent intent = new Intent(MainActivity.this,
-                    SecondActivity.class);
-            intent.putExtra("result", sum);
-            startActivity(intent);
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class); // สร้างจดหมาย จ่าหน้าซอง (create intent)
+            intent.putExtra("result", sum); // ใส่ของลงในซองจดหมาย
+            startActivity(intent); // ส่งจดหมาย (send intent)
         }
     }
 
