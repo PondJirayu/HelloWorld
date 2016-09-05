@@ -8,7 +8,7 @@ public class Coordinate {
     private int x, y, z;
 
     public Coordinate() {
-        this(0,0,0);
+        this(0, 0, 0);
     }
 
     public Coordinate(int x, int y, int z) {
