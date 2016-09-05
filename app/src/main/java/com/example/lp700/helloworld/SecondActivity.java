@@ -15,9 +15,15 @@ public class SecondActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        Intent intent = getIntent();
-        sum = intent.getIntExtra("result", 0);
+        Intent intent = getIntent(); // เปิดซองจดหมาย
+        sum = intent.getIntExtra("result", 0); // เอา result ออกมา
 
+        Bundle bundle = intent.getBundleExtra("cBundle");
+
+        Coordinate c1 = new Coordinate(bundle.getInt("x"), bundle.getInt("y"), bundle.getInt("z"));
+//        c1.setX(bundle.getInt("x"));
+//        c1.setY(bundle.getInt("y"));
+//        c1.setZ(bundle.getInt("z"));
         initInstances();
     }
 

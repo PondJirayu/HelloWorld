@@ -153,6 +153,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Toast.LENGTH_LONG)
                     .show();
 
+
+            // การยิง intent
             Intent intent = new Intent(MainActivity.this, SecondActivity.class); // สร้างจดหมาย จ่าหน้าซอง (create intent)
             intent.putExtra("result", sum); // ใส่ของลงในซองจดหมาย
 
@@ -161,6 +163,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //            c1.setX(5);
 //            c1.setY(10);
 //            c1.setY(20);
+            Bundle bundle = new Bundle();
+            bundle.putInt("x", c1.getX());
+            bundle.putInt("y", c1.getY());
+            bundle.putInt("z", c1.getZ());
+            intent.putExtra("cBundle", bundle);
 
             startActivity(intent); // ส่งจดหมาย (send intent)
         }
