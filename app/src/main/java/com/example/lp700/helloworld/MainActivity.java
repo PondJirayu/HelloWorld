@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             // การยิง intent
             Intent intent = new Intent(MainActivity.this, SecondActivity.class); // สร้างจดหมาย จ่าหน้าซอง (create intent)
-            intent.putExtra("result", sum); // ใส่ของลงในซองจดหมาย
+            intent.putExtra("result", sum); // ใส่ของ(primitive type)ในซองจดหมายใหญ่(intent)
 
             // Bundle Lab
             Coordinate c1 = new Coordinate(5, 10, 20);
@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             bundle.putInt("x", c1.getX());
             bundle.putInt("y", c1.getY());
             bundle.putInt("z", c1.getZ());
-            intent.putExtra("cBundle", bundle);
+            intent.putExtra("cBundle", bundle); // ใส่ซองจดหมายเล็ก(bundle)ในซองจดหมายใหญ่(intent)
 
             // Serializable Lab
             CoordinateSerializable c2 = new CoordinateSerializable(5, 10, 20);
@@ -181,9 +181,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //            c3.setX(5);
 //            c3.setY(10);
 //            c3.setZ(20);
-            intent.putExtra("cParcelable", c3);
+            intent.putExtra("cParcelable", c3); // ใส่กล่องพัสดุ(parcel)ในซองจดหมายใหญ่(intent)
 
-            startActivity(intent); // ส่งจดหมาย (send intent)
+            startActivity(intent); // ส่งจดหมาย(send intent)
         }
     }
 
