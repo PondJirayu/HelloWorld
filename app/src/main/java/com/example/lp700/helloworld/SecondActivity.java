@@ -9,6 +9,7 @@ public class SecondActivity extends Activity {
 
     TextView tvResult;
     int sum = 0;
+    Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,10 +18,9 @@ public class SecondActivity extends Activity {
 
         Intent intent = getIntent(); // เปิดซองจดหมาย
         sum = intent.getIntExtra("result", 0); // เอา result ออกมา
+        bundle = intent.getBundleExtra("cBundle"); // เปิดซอง bundle
 
-        Bundle bundle = intent.getBundleExtra("cBundle");
-
-        Coordinate c1 = new Coordinate(bundle.getInt("x"), bundle.getInt("y"), bundle.getInt("z"));
+        Coordinate c1 = new Coordinate(bundle.getInt("x"), bundle.getInt("y"), bundle.getInt("z")); // เอาของที่อยู่ในซอง bundle ออกมา
 //        c1.setX(bundle.getInt("x"));
 //        c1.setY(bundle.getInt("y"));
 //        c1.setZ(bundle.getInt("z"));
