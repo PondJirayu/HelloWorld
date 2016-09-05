@@ -19,6 +19,7 @@ public class SecondActivity extends Activity {
         Intent intent = getIntent(); // เปิดซองจดหมาย
         sum = intent.getIntExtra("result", 0); // เอา result ออกมา
         bundle = intent.getBundleExtra("cBundle"); // เปิดซอง bundle
+        CoordinateSerializable c2 = (CoordinateSerializable) intent.getSerializableExtra("cSerializable"); // คี่กระดาษ(Serializable)ได้ object ออกมา
 
         Coordinate c1 = new Coordinate(bundle.getInt("x"), bundle.getInt("y"), bundle.getInt("z")); // เอาของที่อยู่ในซอง bundle ออกมา
 //        c1.setX(bundle.getInt("x"));
