@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(MainActivity.this, SecondActivity.class); // สร้างจดหมาย จ่าหน้าซอง (create intent)
             intent.putExtra("result", sum); // ใส่ของลงในซองจดหมาย
 
-            // Playground -> Bundle Lab
+            // Bundle Lab
             Coordinate c1 = new Coordinate(5, 10, 20);
 //            c1.setX(5);
 //            c1.setY(10);
@@ -171,10 +171,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             // Serializable Lab
             CoordinateSerializable c2 = new CoordinateSerializable(5, 10, 20);
-//            c2.x = 5;
-//            c2.y = 10;
-//            c2.z = 20;
+//            c2.setX(5);
+//            c2.setY(10);
+//            c2.setZ(20);
             intent.putExtra("cSerializable", c2);
+
+            // Parcelable Lab
+            CoordinateParcelable c3 = new CoordinateParcelable(5, 10, 20);
+//            c3.setX(5);
+//            c3.setY(10);
+//            c3.setZ(20);
+            intent.putExtra("cParcelable", c3);
 
             startActivity(intent); // ส่งจดหมาย (send intent)
         }

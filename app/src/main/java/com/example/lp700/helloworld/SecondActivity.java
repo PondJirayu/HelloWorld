@@ -11,22 +11,25 @@ public class SecondActivity extends Activity {
     int sum = 0;
     Bundle bundle;
     CoordinateSerializable c2;
+    CoordinateParcelable c3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        Intent intent = getIntent(); // เปิดซองจดหมาย
-        sum = intent.getIntExtra("result", 0); // เอา result ออกมา (Primitive Type)
-        bundle = intent.getBundleExtra("cBundle"); // หยิบ Bundle ออกมาจาก intent (Object)
-        c2 = (CoordinateSerializable) intent.getSerializableExtra("cSerializable"); // คี่กระดาษ(Serializable)ได้ object ออกมา (Object)
+        Intent intent = getIntent(); // เปิดซองจดหมาย(intent)
+        sum = intent.getIntExtra("result", 0); // เอา result ออกมา(Primitive Type)
+        bundle = intent.getBundleExtra("cBundle"); // หยิบซอง Bundle ออกมาจากซอง(intent)
+        c2 = (CoordinateSerializable) intent.getSerializableExtra("cSerializable"); // คี่กระดาษ(Serializable)ออกมาได้(Object)
+        c3 = intent.getParcelableExtra("cParcelable"); // หยิบกล่องพัสดุ(Parcelable)ออกมาจากซอง(intent)และเปิดกล่องพัสดุออกมาได้(Object)
 
-        // เปิดซอง bundle เอาของที่อยู่ในซองออกมา และประกอบเป็น Object
+        // เปิดซอง bundle เอาของที่อยู่ในซองออกมาและประกอบเป็น(Object)
         Coordinate c1 = new Coordinate(bundle.getInt("x"), bundle.getInt("y"), bundle.getInt("z"));
 //        c1.setX(bundle.getInt("x"));
 //        c1.setY(bundle.getInt("y"));
 //        c1.setZ(bundle.getInt("z"));
+
         initInstances();
     }
 
