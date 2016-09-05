@@ -10,6 +10,7 @@ public class SecondActivity extends Activity {
     TextView tvResult;
     int sum = 0;
     Bundle bundle;
+    CoordinateSerializable c2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +19,10 @@ public class SecondActivity extends Activity {
 
         Intent intent = getIntent(); // เปิดซองจดหมาย
         sum = intent.getIntExtra("result", 0); // เอา result ออกมา
-        bundle = intent.getBundleExtra("cBundle"); // เปิดซอง bundle
-        CoordinateSerializable c2 = (CoordinateSerializable) intent.getSerializableExtra("cSerializable"); // คี่กระดาษ(Serializable)ได้ object ออกมา
+        bundle = intent.getBundleExtra("cBundle"); // หยิบ Bundle ออกมาจาก intent
+        c2 = (CoordinateSerializable) intent.getSerializableExtra("cSerializable"); // คี่กระดาษ(Serializable)ได้ object ออกมา
 
-        Coordinate c1 = new Coordinate(bundle.getInt("x"), bundle.getInt("y"), bundle.getInt("z")); // เอาของที่อยู่ในซอง bundle ออกมา
+        Coordinate c1 = new Coordinate(bundle.getInt("x"), bundle.getInt("y"), bundle.getInt("z")); // เปิดซอง bundle เอาของที่อยู่ในซองออกมา
 //        c1.setX(bundle.getInt("x"));
 //        c1.setY(bundle.getInt("y"));
 //        c1.setZ(bundle.getInt("z"));
