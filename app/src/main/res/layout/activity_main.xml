@@ -49,6 +49,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/ninepatch_lab"
+                    android:freezesText="true"
                     android:gravity="left|center_vertical"
                     android:text="0" />
 
@@ -127,7 +128,7 @@
 
             <include layout="@layout/sample_bar" />
 
-            <include layout="@layout/sample_bar2"/>
+            <include layout="@layout/sample_bar2" />
 
             <com.example.lp700.helloworld.CustomViewGroup
                 android:id="@+id/viewGroup1"
@@ -160,10 +161,12 @@
                 fancy:fb_textColor="#FFFFFF" />
 
             <com.example.lp700.helloworld.CustomView
+                android:id="@+id/view1"
                 android:layout_width="match_parent"
                 android:layout_height="160dp" />
 
             <com.example.lp700.helloworld.CustomView
+                android:id="@+id/view2"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 app:isBlue="true" />

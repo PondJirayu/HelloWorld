@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //            c3.setZ(20);
             intent.putExtra("cParcelable", c3); // ใส่กล่องพัสดุ(parcel)ในซองจดหมายใหญ่(intent)
 
-            startActivity(intent); // ส่งจดหมาย(send intent)
+//            startActivity(intent); // ส่งจดหมาย(send intent)
         }
     }
 
@@ -234,6 +234,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onStop() {
         super.onStop();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        // Save thing(s) here
+//        outState.putString("text", tvResult.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        // Restore thing(s) here
+//        tvResult.setText(savedInstanceState.getString("text"));
     }
 }
 
