@@ -37,4 +37,24 @@ public class SecondActivity extends Activity {
         tvResult = (TextView) findViewById(R.id.tvResult);
         tvResult.setText("Result " + sum);
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
 }
