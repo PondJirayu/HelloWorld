@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        viewGroup1.setButtonText("Hello");
 //        viewGroup2.setButtonText("World");
 
-        btnCalculate.setOnClickListener(this);
+        btnCalculate.setOnClickListener(this); // การใช้ this จะได้ค่าของ reference ของ Object
         btnClear.setOnClickListener(this);
         imageButton1.setOnClickListener(this);
         imageButton2.setOnClickListener(this);
