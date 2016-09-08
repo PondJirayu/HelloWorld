@@ -1,32 +1,32 @@
 package com.example.lp700.helloworld;
 
+import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.preference.Preference;
 import android.view.View;
 
 /**
  * Created by lp700 on 6/9/2559.
  */
-public class CustomViewSavedState extends View.BaseSavedState{
+public class BundleSavedState extends View.BaseSavedState{
 
-    private boolean blue;
+    private Bundle bundle;
 
-    public boolean isBlue() {
-        return blue;
+    public Bundle getBundle() {
+        return bundle;
     }
 
-    public void setBlue(boolean blue) {
-        this.blue = blue;
+    public void setBundle(Bundle bundle) {
+        this.bundle = bundle;
     }
 
-    public CustomViewSavedState(Parcel source) {
+    public BundleSavedState(Parcel source) {
         super(source);
         // Read back
-        blue = source.readInt() == 1;
+        bundle = source.readBundle();
     }
 
-    public CustomViewSavedState(Parcelable superState) {
+    public BundleSavedState(Parcelable superState) {
         super(superState);
     }
 
@@ -34,18 +34,18 @@ public class CustomViewSavedState extends View.BaseSavedState{
     public void writeToParcel(Parcel out, int flags) {
         super.writeToParcel(out, flags);
         // Write var here
-        out.writeInt(blue ? 1 : 0);
+        out.writeBundle(bundle);
     }
 
     public static final Creator CREATOR = new Creator() {
         @Override
         public Object createFromParcel(Parcel source) {
-            return new CustomViewSavedState(source);
+            return new BundleSavedState(source);
         }
 
         @Override
         public Object[] newArray(int size) {
-            return new CustomViewSavedState[size];
+            return new BundleSavedState[size];
         }
     };
 }
