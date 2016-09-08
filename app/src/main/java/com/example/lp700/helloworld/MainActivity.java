@@ -25,6 +25,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    int x, y, z; // Save and Restore in Activity's instance state - เก็บไว้ในระดับ Activity
+
     EditText editText1, editText2;
     TextView tvResult, tvDivideByZero;
     Button btnCalculate, btnClear;
@@ -241,6 +243,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onSaveInstanceState(outState);
         // Save thing(s) here
 //        outState.putString("text", tvResult.getText().toString());
+        outState.putInt("x", x);
+        outState.putInt("y", y);
+        outState.putInt("z", z);
     }
 
     @Override
@@ -248,6 +253,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onRestoreInstanceState(savedInstanceState);
         // Restore thing(s) here
 //        tvResult.setText(savedInstanceState.getString("text"));
+        x = savedInstanceState.getInt("x");
+        y = savedInstanceState.getInt("y");
+        z = savedInstanceState.getInt("z");
     }
 }
 
