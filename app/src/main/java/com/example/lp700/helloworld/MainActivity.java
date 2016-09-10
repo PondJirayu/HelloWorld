@@ -208,7 +208,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.putExtra("cParcelable", c3); // ใส่กล่องพัสดุ(parcel)ในซองจดหมายใหญ่(intent)
 
             startActivityForResult(intent, 12345); // ส่งจดหมาย(send intent)
-//            finish();
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }
     }
 
