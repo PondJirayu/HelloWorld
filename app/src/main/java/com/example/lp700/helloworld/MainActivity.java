@@ -2,6 +2,7 @@ package com.example.lp700.helloworld;
 
 import android.content.Intent;
 import android.graphics.Point;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
@@ -185,7 +186,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //            c3.setZ(20);
             intent.putExtra("cParcelable", c3); // ใส่กล่องพัสดุ(parcel)ในซองจดหมายใหญ่(intent)
 
-//            startActivity(intent); // ส่งจดหมาย(send intent)
+            startActivity(intent); // ส่งจดหมาย(send intent)
         }
     }
 
@@ -238,6 +239,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onStop();
     }
 
+    // บันทึกค่าลงแรม
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -247,6 +249,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         outState.putInt("y", y);
         outState.putInt("z", z);
     }
+
+
+    // บันทึกค่าลงดิส
+//    @Override
+//    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+//        super.onSaveInstanceState(outState, outPersistentState);
+//    }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {

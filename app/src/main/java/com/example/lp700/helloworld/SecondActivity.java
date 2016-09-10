@@ -3,15 +3,18 @@ package com.example.lp700.helloworld;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class SecondActivity extends Activity {
+public class SecondActivity extends Activity implements View.OnClickListener {
 
     TextView tvResult;
     int sum = 0;
     Bundle bundle;
     CoordinateSerializable c2;
     CoordinateParcelable c3;
+    Button btnOk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +38,13 @@ public class SecondActivity extends Activity {
 
     private void initInstances() {
         tvResult = (TextView) findViewById(R.id.tvResult);
+        btnOk = (Button) findViewById(R.id.btnOk);
+
         tvResult.setText("Result " + sum);
+
+        btnOk.setOnClickListener(this);
     }
+
 
     @Override
     protected void onStart() {
@@ -56,5 +64,12 @@ public class SecondActivity extends Activity {
     @Override
     protected void onStop() {
         super.onStop();
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == btnOk) {
+            finish();
+        }
     }
 }
