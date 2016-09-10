@@ -49,9 +49,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
 
-        setContentView(R.layout.activity_main); // Inflate
+        setContentView(R.layout.welcome); // Inflate
 
-        initInstances();
+//        initInstances();
 
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();

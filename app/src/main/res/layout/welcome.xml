@@ -9,71 +9,89 @@
         android:scaleType="centerCrop"
         android:src="@drawable/bg" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@drawable/logo" />
-
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvWelcome"
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/logo" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tvWelcome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/welcome_to_clipzy"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/tv_welcome" />
+
+                <TextView
+                    android:id="@+id/tvClip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/tvWelcome"
+                    android:layout_alignRight="@id/tvWelcome"
+                    android:layout_below="@id/tvWelcome"
+                    android:gravity="center"
+                    android:text="@string/clip_anything_from_over_100000_hot_topics"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/tv_clip" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/tvClip"
+                    android:layout_alignRight="@id/tvClip"
+                    android:layout_below="@id/tvClip" />
+
+            </RelativeLayout>
+
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/welcome_to_clipzy"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/tv_welcome" />
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/btn_getstarted_margin_buttom"
+                android:background="@drawable/selector_btn_getstarted"
+                android:padding="@dimen/btn_getstarted_padding"
+                android:text="@string/get_started"
+                android:textColor="@android:color/white" />
 
-            <TextView
+            <Button
+                style="@style/TextViewStyle.Green"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/tvWelcome"
-                android:layout_alignRight="@id/tvWelcome"
-                android:layout_below="@id/tvWelcome"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/btn_skip_margin_buttom"
+                android:background="@android:color/transparent"
+                android:text="@string/skip" />
+
+            <TextView
+                style="@style/TextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/textview_marginbotton"
                 android:gravity="center"
-                android:text="@string/clip_anything_from_over_100000_hot_topics"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/tv_clip" />
+                android:text="@string/byContinuing" />
 
-        </RelativeLayout>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/btn_getstarted_margin_buttom"
-            android:background="@drawable/selector_btn_getstarted"
-            android:padding="@dimen/btn_getstarted_padding"
-            android:text="@string/get_started"
-            android:textColor="@android:color/white" />
+        </LinearLayout>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="@dimen/btn_skip_margin_buttom"
-            android:background="@android:color/transparent"
-            android:text="@string/skip"
-            style="@style/TextViewStyle.Green" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="@dimen/textview_marginbotton"
-            android:gravity="center"
-            android:text="@string/byContinuing"
-            style="@style/TextViewStyle" />
-
-    </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
