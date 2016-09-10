@@ -1,6 +1,7 @@
 package com.example.lp700.helloworld;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
@@ -40,6 +41,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // ถ้าเป็น Mobile ให้ไปเอาค่า portrait_only จาก values/bools.xml
+        // ถ้าเป็น tablet ให้ไปเอาค่า portrait_only จาก values-sw600dp/bools.xml
+        if (getResources().getBoolean(R.bool.portrait_only)){
+            // Fix
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
+
         setContentView(R.layout.activity_main); // Inflate
 
         initInstances();
