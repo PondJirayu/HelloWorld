@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class SecondActivity extends Activity implements View.OnClickListener {
@@ -15,6 +16,7 @@ public class SecondActivity extends Activity implements View.OnClickListener {
     CoordinateSerializable c2;
     CoordinateParcelable c3;
     Button btnOk;
+    EditText editTextHola;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class SecondActivity extends Activity implements View.OnClickListener {
     private void initInstances() {
         tvResult = (TextView) findViewById(R.id.tvResult);
         btnOk = (Button) findViewById(R.id.btnOk);
+        editTextHola = (EditText) findViewById(R.id.editTextHola);
 
         tvResult.setText("Result " + sum);
 
@@ -69,6 +72,9 @@ public class SecondActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == btnOk) {
+            Intent returnIntent = new Intent(); // สร้างซองจดหมาย ไม่ต้องจ่าหน้าซอง
+            returnIntent.putExtra("result", editTextHola.getText().toString()); // เอาของใส่ซอง put extra ใส่ intent
+            setResult(RESULT_OK, returnIntent); // ส่ง intent กลับไปจากที่ที่เรียกมา
             finish();
         }
     }

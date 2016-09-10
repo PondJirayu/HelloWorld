@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     RadioGroup rgOperator;
     CheckBox cbAgree;
     Switch switchOnOff;
-    ImageButton imageButton1,imageButton2;
+    ImageButton imageButton1, imageButton2;
     CustomViewGroup viewGroup1, viewGroup2;
 
     @Override
@@ -80,14 +80,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 12345) {
+            if (resultCode == RESULT_OK) {
+                // Get data from data's extra
+                String result = data.getStringExtra("result"); // รับของที่ส่งกลับมา
+                Toast.makeText(MainActivity.this, result, Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    @Override
     public void onClick(View v) {
-        if(v == imageButton1){
+        if (v == imageButton1) {
             Toast.makeText(MainActivity.this,
                     "Image Button1",
                     Toast.LENGTH_SHORT)
                     .show();
         }
-        if(v == imageButton2){
+        if (v == imageButton2) {
             Toast.makeText(MainActivity.this,
                     "Image Button2",
                     Toast.LENGTH_SHORT)
@@ -186,9 +198,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //            c3.setZ(20);
             intent.putExtra("cParcelable", c3); // ใส่กล่องพัสดุ(parcel)ในซองจดหมายใหญ่(intent)
 
-            startActivity(intent); // ส่งจดหมาย(send intent)
+            startActivityForResult(intent, 12345); // ส่งจดหมาย(send intent)
+//            finish();
         }
     }
+
 
     // Inflate Options Menu from res/menu/menu_main.xml
     @Override
